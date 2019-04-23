@@ -1,14 +1,16 @@
+require "pry"
 class Shoe
-  attr_accessor :color, :size, :material, :condition
-  attr_reader :brand
+  # attr_accessor :author, :page_count  # remove the attr_accessor for genre
+  attr_reader :brand  # add an attr_reader for brand
+
+BRANDS = []
+
 
   def initialize(brand)
     @brand = brand
-  end
-
-  def cobble
-    self.condition = "new"
-    puts "Your shoe is as good as new!"
+    unless BRANDS.include?(brand)
+    BRANDS << brand
+    end
   end
 
 end
